@@ -22,9 +22,7 @@ app.get('/api/hello', function(req, res) {
   res.json({ greeting: 'hello API' });
 });
 
-const regWeb = new RegExp("((http|https)://)(www.)?" 
-+ "[a-zA-Z0-9@:%._\\+~#?&//=]{2,256}\\.[a-z]" 
-+ "{2,6}\\b([-a-zA-Z0-9@:%._\\+~#?&//=]*)")
+const regWeb = new RegExp("((http|https)://)(www.)?")
 
 app.post("/api/shorturl", function(req, res) {
     if(regWeb.test(req.body.url)) {
